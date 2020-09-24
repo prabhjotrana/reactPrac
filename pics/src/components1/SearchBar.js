@@ -1,14 +1,13 @@
-import React from 'react';
-
+import React from "react";
 class SearchBar extends React.Component {
-  state = { term: '' };
-
-  onFormSubmit = event => {
+  state = { term: "cars" };
+  // onInputChange(event) {
+  //   console.log(event.target.value);
+  // }
+  onFormSubmit = (event) => {
     event.preventDefault();
-
     this.props.onSubmit(this.state.term);
   };
-
   render() {
     return (
       <div className="ui segment">
@@ -18,7 +17,7 @@ class SearchBar extends React.Component {
             <input
               type="text"
               value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value })}
+              onChange={(e) => this.setState({ term: e.target.value })}
             />
           </div>
         </form>
@@ -26,5 +25,4 @@ class SearchBar extends React.Component {
     );
   }
 }
-
 export default SearchBar;
